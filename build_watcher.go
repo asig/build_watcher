@@ -78,7 +78,7 @@ func pickSerialDevice() (string, error) {
 
 	for _, file := range files {
 		name := file.Name()
-		if strings.HasPrefix(name, "ttyUSB") || strings.HasPrefix(name, "tty.usbserial") {
+		if strings.HasPrefix(name, "ttyUSB") || strings.HasPrefix(name, "tty.usbserial") || strings.HasPrefix(name, "tty.wchusbserial") {
 			return "/dev/" + name, nil
 		}
 	}
